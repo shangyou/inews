@@ -41,7 +41,7 @@ class Edit extends Web
 
         // Change password
         if ($password) {
-            $this->user->password = Crypt::makePassword($password, $this->app->salt);
+            $this->user->password = Crypt::makePassword($password, $this->app->password_salt);
         }
 
         $send = false;

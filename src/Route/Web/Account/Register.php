@@ -54,7 +54,7 @@ class Register extends Web
 
         $user = Model::factory('User')->create(array(
             'name'     => $this->input->data('name'),
-            'password' => Crypt::makePassword($this->input->data('password'), $this->app->salt),
+            'password' => Crypt::makePassword($this->input->data('password'), $this->app->password_salt),
             'email'    => $this->input->data('email'),
             'bio'      => $this->input->data('bio')
         ));

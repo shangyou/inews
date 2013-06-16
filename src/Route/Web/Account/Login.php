@@ -36,7 +36,7 @@ class Login extends Web
             }
         }
 
-        if ($user->password != Crypt::makePassword($this->input->data('password'), $this->app->salt)) {
+        if ($user->password != Crypt::makePassword($this->input->data('password'), $this->app->password_salt)) {
             $this->alert('User name and password is not match');
         }
 

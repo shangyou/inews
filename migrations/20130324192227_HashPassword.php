@@ -15,7 +15,7 @@ class HashPassword extends Migration
         $password = array();
         while ($row = $query->fetch(\PDO::FETCH_ASSOC)) {
             if (strlen($row['password']) < 40) {
-                $password[$row['id']] = Crypt::makePassword($row['password'], $this->container['app']->salt);
+                $password[$row['id']] = Crypt::makePassword($row['password'], $this->container['app']->password_salt);
             }
         }
 

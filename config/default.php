@@ -1,19 +1,45 @@
 <?php
 
 return array(
-    'site'     => array(
+    /**
+     * Site config
+     */
+    'site'          => array(
+        // Site title, will display on every page top
         'title'        => 'Mac/iOS news',
+        // SEO title suffix for SEO
         'title_suffix' => '- Mac/iOS news',
+        // Will output on non-article page for SEO
         'default_meta' => 'Upcoming Mac/iOS news for you, Daily Mac/iOS tips to live life easy.',
-        'keywords'     => '',
+        // for SEO
+        'keywords'     => 'Mac, iOS, iPhone tips, Mac tips, iOS tips, inews.io, inews',
+        // footer display on every page
         'footer'       => '&copy; Copyright ' . date('Y') . ' Trimidea(<a href="mailto:trimidea@gmail . com">contact</a>), <span class="extra">Hosted on </span><a href="http://www.elinkvps.com/aff.php?aff=038">ELINKVPS</a>.'
     ),
-    'ga'       => false,
-    'timezone' => 'Asia/Shanghai',
-    'views'    => dirname(__DIR__) . '/views',
-    'autoload' => dirname(__DIR__) . '/src',
-    'salt'     => 'D#FA#!#%Nz',
-    'cookie'   => array(
+    /**
+     * GA id for analysis
+     */
+    'ga'            => false,
+    /**
+     * Timezone set
+     */
+    'timezone'      => 'Asia/Shanghai',
+    /**
+     * Views template directory
+     */
+    'views'         => dirname(__DIR__) . '/views',
+    /**
+     * Autoload directory path
+     */
+    'autoload'      => dirname(__DIR__) . '/src',
+    /**
+     * Password salt
+     */
+    'password_salt' => 'D#FA#!#%Nz',
+    /**
+     * Cookie config
+     */
+    'cookie'        => array(
         'path'     => '/',
         'domain'   => null,
         'secure'   => false,
@@ -23,14 +49,23 @@ return array(
         'secret'   => 'DF@#dda#F^!',
         'encrypt'  => false,
     ),
-    'crypt'    => array(
+    /**
+     * Cryptor config
+     */
+    'crypt'         => array(
         'key' => 'sdF!#$FDA'
     ),
-    'sendgrid' => array(
+    /**
+     * Sendgrid config, If not set, verify-mail can not send.
+     */
+    'sendgrid'      => array(
         'username' => '',
         'password' => '',
     ),
-    'admins'   => array(
+    /**
+     * The admins fill with username
+     */
+    'admins'        => array(
         'admin'
     )
 );
