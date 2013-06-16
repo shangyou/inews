@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: http://inews.io/sitemap.xml

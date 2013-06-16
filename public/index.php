@@ -41,18 +41,4 @@ $app->get('/user/(:id)', function ($req, $res) {
     $res->redirect('/u/' . $req->param('id'));
 });
 
-$app->get('/article/(:id)', function ($req, $res) {
-    $res->redirect('/p/' . $req->param('id'));
-});
-
-$app->get('/robots.txt', function ($req, \Pagon\Http\Output $res) use ($app) {
-    $page = __DIR__ . '/page/robots.txt';
-    if (is_file($page . '.' . $app->mode())) {
-        $page .= '.' . $app->mode();
-    }
-    $res->expires(3600);
-    $res->contentType('txt');
-    $res->render($page);
-});
-
 $app->run();
