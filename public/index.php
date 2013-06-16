@@ -35,8 +35,6 @@ $app->post('/api/notify/read', '\Route\Api\MarkRead');
 $app->get('/api/nick', '\Route\Api\Nick');
 $app->get('/api/alfred/(:type)', '\Route\Api\Alfred');
 
-$app->get('/timeline', '\Route\Web\Apple');
-
 $app->get('/user/(:id)', function ($req, $res) {
     $res->redirect('/u/' . $req->param('id'));
 });
