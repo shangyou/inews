@@ -1,0 +1,58 @@
+#!/usr/bin/env php
+<?php
+
+use Pagon\Cli;
+use Pagon\ArgParser;
+
+/** @var $app Pagon\App */
+$app = include dirname(__DIR__) . '/bootstrap.php';
+
+$app->buffer = false;
+
+$app->cli('db:init', '\Route\Cli\DB\Init');
+
+$app->cli('db:(:command)', function ($req, $res) {
+    chdir(APP_DIR);
+    $args = array_slice($req->argv, 2);
+    echo shell_exec(APP_DIR . '/vendor/bin/phpmig ' . ($req->params['command'] != 'mig' ? $req->params['command'] . ' ' : '') . join(' ', $args));
+});
+
+$app->cli('job:point', '\Route\Cli\Job\AnalysisPoint');
+
+$app->cli('update:article', '\Route\Cli\Job\UpdateArticle');
+$app->cli('update:user', '\Route\Cli\Job\UpdateUser');
+
+$app->cli('invite:build', '\Route\Cli\Invite\Build');
+$app->cli('invite:available', '\Route\Cli\Invite\Available');
+$app->cli('invite:send', '\Route\Cli\Invite\Send');
+$app->cli('invite:mail', '\Route\Cli\Invite\Mail');
+
+$app->cli('post:(:action)', '\Route\Cli\Article\Manage');
+
+// Default help
+$app->handleError('404', function ($req, $res) {
+    $parser = new ArgParser();
+
+    $parser->add('task', array('help' => 'Task to run', 'enum' => array(
+        'db:init'        => 'Init the database and table',
+        'db:status'      => 'Show status of migrations',
+        'db:migrate'     => 'Run all migrates',
+        'db:generate'    => 'Generate a new migration',
+        'db:rollback'    => 'Rollback last, or to a specific migration',
+        'db:up'          => 'Run a specific migration',
+        'db:down'        => 'Revert a specific migration',
+        'db:list'        => 'List all command of db',
+
+        'job:point'      => 'Analysis articles point',
+
+        'update:article' => 'Update article counts',
+        'update:user'    => 'Update the user counts',
+
+        'post:delete'    => 'Soft delete the article',
+        'post:revert'    => 'Revert the article',
+    )));
+
+    echo $parser->help();
+});
+
+$app->run();

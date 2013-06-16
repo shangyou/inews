@@ -1,0 +1,28 @@
+{
+  "name": "trimidea/applenews",
+  "description": "apple news",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Corrie Zhao",
+      "email": "hfcorriez@gmail.com"
+    },
+    {
+      "name": "Sofish Lin",
+      "email": "sofish@163.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.1",
+    "dflydev/markdown": "dev-master",
+    "voodoophp/paginator": "1.1.1",
+    "pagon/pagon": "0.6.0",
+    "j4mie/paris": "dev-master",
+    "davedevelopment/phpmig": "v0.4.0",
+    "phpmailer/phpmailer": "dev-master",
+    "sendgrid/sendgrid": "1.0.0"
+  },
+  "require-dev": {
+    "electrolinux/phpquery": "0.9.6"
+  }
+}
