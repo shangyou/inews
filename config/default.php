@@ -56,6 +56,10 @@ return array(
         'key' => 'sdF!#$FDA'
     ),
     /**
+     * Is enable mail verify for user
+     */
+    'verify_user'   => false,
+    /**
      * Sendgrid config, If not set, verify-mail can not send.
      */
     'sendgrid'      => array(

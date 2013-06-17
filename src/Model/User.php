@@ -31,6 +31,12 @@ class User extends Model
         return $this->has_many('Notify');
     }
 
+    public function setVerified()
+    {
+        $this->status = self::OK;
+        return $this;
+    }
+
     public function unreadNotifyCount()
     {
         return Notify::getUserUnreadCount($this->id);

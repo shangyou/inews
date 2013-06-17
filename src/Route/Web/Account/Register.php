@@ -20,6 +20,8 @@ class Register extends Web
 
     public function post()
     {
+        $is_verify_user = $this->app->verify_user;
+
         // Check email
         if (!filter_var($this->input->data('email'), FILTER_VALIDATE_EMAIL)) {
             $this->alert('Email format is wrong');
@@ -34,7 +36,6 @@ class Register extends Web
         if (strlen($this->input->data('password')) < 6) {
             $this->alert('Password length must be great than or equal 6');
         }
-
 
         // Check if exists user name
         if (Model::factory('User')
@@ -52,12 +53,18 @@ class Register extends Web
             $this->alert('Email already taken');
         }
 
+        // Create user
         $user = Model::factory('User')->create(array(
             'name'     => $this->input->data('name'),
             'password' => Crypt::makePassword($this->input->data('password'), $this->app->password_salt),
             'email'    => $this->input->data('email'),
             'bio'      => $this->input->data('bio')
         ));
+
+        // If disable verify_user will set user verified automatic.
+        if (!$is_verify_user) {
+            $user->setVerified();
+        }
 
         try {
             ORM::get_db()->beginTransaction();
@@ -73,14 +80,17 @@ class Register extends Web
             ORM::get_db()->rollback();
         }
 
-        // Send verify email
-        $this->sendVerifyMail($user);
-
-        // $this->redirect('/account/login');
-
         // login when success
         $this->input->session('login', $user->id);
-        $this->redirect('/account/welcome');
+
+        // Check if verify user
+        if ($is_verify_user) {
+            // Send verify email
+            $this->sendVerifyMail($user);
+            $this->redirect('/account/welcome');
+        } else {
+            $this->redirect('/');
+        }
     }
 
     private function sendVerifyMail($user)
