@@ -19,7 +19,7 @@
 
 <header id="header">
     <menu class="wrapper clearfix">
-        <li<?php if (!in_array($id, array('latest', 'leader'))): ?> class="on"<?php endif; ?>><a href="/"><i class="font font-appstore"></i> <?php echo $config['site']['title']; ?></a></li>
+        <li<?php if (!in_array($id, array('latest', 'leader'))): ?> class="on"<?php endif; ?>><a href="/"><i class="font font-monitor"></i> <?php echo $config['site']['title']; ?></a></li>
         <li<?php if ($id == 'latest'): ?> class="on"<?php endif; ?>><a href="/latest"><i class="font font-clock"></i> Latest</a></li>
         <li<?php if ($id == 'leader'): ?> class="on"<?php endif; ?>><a class="topuser" href="/leaders"><i class="font font-user"></i> Leaders</a></li>
         <li class="submit"><a href="/submit"><i class="font font-edit"></i> Share one</a></li>
