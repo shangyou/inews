@@ -21,26 +21,32 @@ return array(
         // footer display on every page
         'footer'       => '&copy; Copyright ' . date('Y') . ' Trimidea(<a href="mailto:trimidea@gmail . com">contact</a>), <span class="extra">Hosted on </span><a href="http://www.elinkvps.com/aff.php?aff=038">ELINKVPS</a>.'
     ),
+
     /**
      * GA id for analysis
      */
     'ga'            => false,
+
     /**
      * Timezone set
      */
     'timezone'      => 'Asia/Shanghai',
+
     /**
      * Views template directory
      */
     'views'         => dirname(__DIR__) . '/views',
+
     /**
      * Autoload directory path
      */
     'autoload'      => dirname(__DIR__) . '/src',
+
     /**
      * Password salt
      */
     'password_salt' => 'D#FA#!#%Nz',
+
     /**
      * Cookie config
      */
@@ -54,16 +60,19 @@ return array(
         'secret'   => 'DF@#dda#F^!',
         'encrypt'  => false,
     ),
+
     /**
      * Cryptor config
      */
     'crypt'         => array(
         'key' => 'sdF!#$FDA'
     ),
+
     /**
      * Is enable mail verify for user
      */
     'verify_user'   => false,
+
     /**
      * Sendgrid config, If not set, verify-mail can not send.
      */
@@ -71,6 +80,7 @@ return array(
         'username' => '',
         'password' => '',
     ),
+
     /**
      * The admins fill with username
      */
