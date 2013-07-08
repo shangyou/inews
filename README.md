@@ -4,7 +4,7 @@ iNews
 要求
 -----
 
-- PHP 5.3.1+
+- PHP 5.3.9+
 - Composer (`brew install composer` or [composer](http://getcomposer.org))
 - Apache
 - Mysql 5.0+
