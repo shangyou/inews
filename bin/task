@@ -2,7 +2,7 @@
 <?php
 
 use Pagon\Cli;
-use Pagon\ArgParser;
+use Pagon\Utility\ArgParser;
 
 /** @var $app Pagon\App */
 $app = include dirname(__DIR__) . '/bootstrap.php';
