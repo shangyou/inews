@@ -1,4 +1,9 @@
 <?php
+/**
+ * Don't change this file
+ *
+ * If u want change, add this config on your config and change it.
+ */
 
 return array(
     /**
