@@ -14,7 +14,7 @@
             <p><input type="text" autofocus name="title" placeholder="Title" value="<?php echo isset($article) ? $article->title : ''; ?>" required="required"/></p>
             <p><input type="url" data-aorb="a" name="link" placeholder="URL" required="required" value="<?php echo isset($article) ? $article->link : ''; ?>"/> <cite>or</cite></p>
             <textarea name="content" class="typo-p" data-aorb="b" placeholder="Content" required="required"><?php echo isset($article) ? $article->content : ''; ?></textarea>
-            <input type="submit" class="btn" value="Send it"/> <small>Markdown syntax is supported</small>
+            <input type="submit" class="btn" value="Send it"/> <small><a href="http://wowubuntu.com/markdown/" target="_blank">Markdown syntax is supported</a></small>
         </form>
     <?php endif; ?>
 </article>
