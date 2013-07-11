@@ -7,6 +7,7 @@ $app->add('Session\Cookie', array('lifetime' => 86400 * 7));
 
 $app->get('/', '\Route\Web\Index');
 $app->get('/latest', '\Route\Web\Latest');
+$app->get('/search', '\Route\Web\Search');
 $app->get('/leaders', '\Route\Web\Leader');
 $app->all('/account/register', '\Route\Web\Account\Register');
 $app->all('/account/login', '\Route\Web\Account\Login');
