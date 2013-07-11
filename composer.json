@@ -20,7 +20,8 @@
     "j4mie/paris": "dev-master",
     "davedevelopment/phpmig": "v0.4.0",
     "phpmailer/phpmailer": "dev-master",
-    "sendgrid/sendgrid": "1.0.0"
+    "sendgrid/sendgrid": "1.0.0",
+    "suin/php-rss-writer": "1.2"
   },
   "require-dev": {
     "electrolinux/phpquery": "0.9.6"

@@ -8,6 +8,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 $app = new App(__DIR__ . '/config/default.php');
 
+$app->assisting();
+
 $app->configure(function ($mode) use ($app) {
     $conf_file = __DIR__ . '/config/' . $mode . '.php';
     if (is_file($conf_file)) {

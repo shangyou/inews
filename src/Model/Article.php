@@ -2,6 +2,16 @@
 
 namespace Model;
 
+use Pagon\Url;
+
+/**
+ * Article Model
+ *
+ * @package Model
+ * @param string $title     标题
+ * @param string $content   内容
+ * @param string $link      外链
+ */
 class Article extends Model
 {
     public static $_table = 'article';
@@ -27,6 +37,11 @@ class Article extends Model
         } else {
             return $this->link;
         }
+    }
+
+    public function permalink($full = false)
+    {
+        return ($full ? Url::site() : '') . '/p/' . $this->id;
     }
 
     public function diggUsers()
