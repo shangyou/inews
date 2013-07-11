@@ -66,7 +66,7 @@
             <?php if (!$user): ?>
             <a class="btn" href="/account/login">Login or Register to share mind</a> <small>Markdown syntax is supported</small>
             <?php else: ?>
-            <input type="submit" class="btn" value="Share my mind"/> <small>Markdown syntax is supported</small>
+            <input type="submit" class="btn" value="Share my mind"/> <small><a href="http://wowubuntu.com/markdown/" target="_blank">Markdown syntax is supported</a></small>
             <?php endif; ?>
         </form>
     </div>
