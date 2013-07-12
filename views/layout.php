@@ -11,6 +11,7 @@
     ?>
     <meta name="description" content="<?php echo str_replace("\n","", strip_tags($meta_des)); ?>"/>
     <meta name="keyword" content="<?php echo $config['site']['keywords']; ?>" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<?php echo url('/feed', null, true); ?>" />
     <link rel="stylesheet" href="/static/style.css" />
     <link rel="icon shortcut" href="/favicon.png"/>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
