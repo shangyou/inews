@@ -24,7 +24,7 @@
         <li<?php if ($id == 'latest'): ?> class="on"<?php endif; ?>><a href="/latest"><i class="font font-clock"></i> Latest</a></li>
         <li<?php if ($id == 'leader'): ?> class="on"<?php endif; ?>><a class="topuser" href="/leaders"><i class="font font-user"></i> Leaders</a></li>
         <li class="searchbar">
-            <form action="/search"><input name="kw" value="<?php echo get('kw'); ?>" placeholder="输入关键字..." /></form>
+            <form action="/search"><input name="kw" value="<?php echo Pagon\Html::entities(get('kw')); ?>" placeholder="输入关键字..." /></form>
         </li>
         <li class="submit"><a href="/submit"><i class="font font-edit"></i> Share one</a></li>
     </menu>
