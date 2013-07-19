@@ -10,8 +10,8 @@ return array(
      * Site config
      */
     'site'          => array(
-        // Site title, will display on every page top
-        'title'        => 'Mac/iOS news',
+        // Site title, will display on home menu
+        'title'        => 'iNews',
         // SEO title suffix for SEO
         'title_suffix' => '- Mac/iOS news',
         // Will output on non-article page for SEO
@@ -19,7 +19,7 @@ return array(
         // for SEO
         'keywords'     => 'Mac, iOS, iPhone tips, Mac tips, iOS tips, inews.io, inews',
         // footer display on every page
-        'footer'       => '&copy; Copyright ' . date('Y') . ' Trimidea(<a href="mailto:trimidea@gmail . com">contact</a>), <span class="extra">Hosted on </span><a href="http://www.elinkvps.com/aff.php?aff=038">ELINKVPS</a>.'
+        'footer'       => ''
     ),
 
     /**

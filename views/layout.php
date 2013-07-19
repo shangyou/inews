@@ -65,6 +65,7 @@ endif; ?>
 </div>
 
 <footer class="wrapper">
+&copy; Copyright <?php echo date('Y') . ' ' . $config['site']['title']; ?>, Powered by <a href="http://inews.io" title="inews.io">iNews.io</a>.&nbsp;
 <?php echo $config['site']['footer']; ?>
 </footer>
 
