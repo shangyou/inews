@@ -74,7 +74,8 @@ endif; ?>
 </div>
 
 <footer class="wrapper">
-<?php echo $config['site']['footer']; ?>
+    &copy; Copyright <?php echo date('Y') . ' ' . $config['site']['title']; ?>, Powered by <a href="http://inews.io" title="inews.io">iNews.io</a>.&nbsp;
+    <?php echo $config['site']['footer']; ?>
 </footer>
 
 <div class="modal hide" id="modal-shortcut">
