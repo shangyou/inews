@@ -23,9 +23,6 @@
         <li<?php if (!in_array($id, array('latest', 'leader'))): ?> class="on"<?php endif; ?>><a href="/"><i class="font font-monitor"></i> <?php echo $config['site']['title']; ?></a></li>
         <li<?php if ($id == 'latest'): ?> class="on"<?php endif; ?>><a href="/latest"><i class="font font-clock"></i> Latest</a></li>
         <li<?php if ($id == 'leader'): ?> class="on"<?php endif; ?>><a class="topuser" href="/leaders"><i class="font font-user"></i> Leaders</a></li>
-        <li class="searchbar">
-            <form action="/search"><input name="kw" value="<?php echo Pagon\Html::entities(get('kw')); ?>" placeholder="输入关键字..." /></form>
-        </li>
         <li class="submit"><a href="/submit"><i class="font font-edit"></i> Share one</a></li>
     </menu>
 </header>
@@ -61,11 +58,22 @@ endif; ?>
 </div>
 
 <div class="wrapper list">
+    <?php if(isset($articles)) { ?>
+        <div class="tools news">
+            <form action="/search" class="news-item">
+                <small class="pull-right">
+                    <?php echo config('site.search_bar'); ?>
+                    <a href="javascript:(function(d,s){ window.site_url = '<?php echo Pagon\Url::site(); ?>'; s = d.createElement('script');s.src='<?php echo Pagon\Url::site(); ?>/static/bml.js';d.head.appendChild(s);})(document);" class="tag tag-ok">分享到 iNews</a> ←拖到书签栏
+                </small>
+                <i class="font font-quote"></i>
+                <input type="text" name="kw" placeholder="type to search..." required />
+            </form>
+        </div>
+    <?php } ?>
     <?php echo $body;?>
 </div>
 
 <footer class="wrapper">
-&copy; Copyright <?php echo date('Y') . ' ' . $config['site']['title']; ?>, Powered by <a href="http://inews.io" title="inews.io">iNews.io</a>.&nbsp;
 <?php echo $config['site']['footer']; ?>
 </footer>
 

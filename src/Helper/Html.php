@@ -23,7 +23,7 @@ class Html
         $paginator = new Paginator($path, $pattern);
         return $paginator->setTotalItems($total)
             ->setItemsPerPage($limit)
-            ->setNavigationSize(10)
+            ->setNavigationSize(9)
             ->setCurrentPage($page)
             ->render();
     }

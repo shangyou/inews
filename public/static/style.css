@@ -186,10 +186,6 @@ menu i{padding-right:3px;}
 menu a:hover{text-decoration:none;}
 menu li{display:block;float:left;}
 menu li:hover,menu .on{background:#08c;}
-menu .searchbar {margin-left: 100px;}
-menu .searchbar form {display: block;padding:0 20px; height: 50px; line-height: 50px;}
-menu .searchbar input {width: 150px; border: none; padding: 0 3px;}
-menu li.searchbar:hover {background: none;}
 menu .submit a{position:absolute;right:0;}
 menu .submit a:hover{text-decoration:none;background:rgba(0,0,0,0.5);}
 
@@ -204,6 +200,8 @@ menu .submit a:hover{text-decoration:none;background:rgba(0,0,0,0.5);}
 .news-item{display:block;padding:15px 40px;border-bottom:1px dotted #ddd;position:relative;}
 .news-item:hover, .news-item:active{-moz-transition:background ease-in .1s;-webkit-transition:background ease-in .1s;transition:background ease-in .1s;padding-left:35px;border-left:5px solid #09f;background:#ffe;}
 .news-item:last-child{border-bottom:none;}
+.news-item-cap{background:#fffdd1;}
+.news-item-cap:hover, .news-item-cap:active{padding-left:40px;border:none;border-bottom:1px dotted #ddd;background:#fffdd1;}
 .news-item .meta{font-family:Optima;}
 .news-item .meta a{color:#999;}
 .news-item h4{margin-bottom:-0.2em;}
@@ -277,6 +275,16 @@ background-color:#ededed;-moz-border-radius:2px;-webkit-border-radius:2px;border
 .badge{border-radius:10px;height:14px;padding:0 5px;line-height:14px;background:#5ea900;color:#fff;z-index:1000;display:inline-block;text-align:center;font-size:12px;}
 .markall{position:absolute;right:0;top:-50px;}
 
+.tools{background:#f8f8f8;border-bottom:1px solid #ddd;}
+.tools i{color:#08c;font-size:18px;}
+.tools .pull-right{margin-right:-20px;padding-top:5px;color:#aaa;}
+.tools .pull-right a{displsy:inline-block;margin:0 10px;}
+.tools .pull-right a:first-of-type{margin-left:0;}
+.tools.news .news-item:hover{border:none;padding-left:40px;background:none;}
+.tools input{border:none;border-bottom:1px solid #eee;background:none;border-radius:0;}
+.tools input:focus{background:none;border-bottom-color:#aaa;}
+
+
 /* iPhone only */
 @media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
     .wrapper{width:320px;margin:0 auto;background:#fff;}
@@ -305,6 +313,8 @@ background-color:#ededed;-moz-border-radius:2px;-webkit-border-radius:2px;border
     input[type=text], input[type=password], input[type=email], input[type=url],
     input[type=search], textarea{width:200px;-webkit-appearance:none;}
     textarea{width:280px;}
+
+    .tools .pull-right{float:left;margin:0 0 6px!important;display:block;white-space:nowrap;}
 }
 
 @media only screen and (device-width: 768px) {
