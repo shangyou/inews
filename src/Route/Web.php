@@ -119,7 +119,7 @@ class Web extends Rest
             array('dir' => $this->app->views)
         );
 
-        $this->app->render($this->layout, array('body' => $body) + $this->data);
+        $this->app->render($this->layout, array('body' => $body->render()) + $this->data);
     }
 
     /**
