@@ -63,7 +63,7 @@ endif; ?>
             <form action="/search" class="news-item">
                 <small class="pull-right">
                     <?php echo config('site.search_bar'); ?>
-                    <a href="javascript:(function(d,s){ window.site_url = '<?php echo Pagon\Url::site(); ?>'; s = d.createElement('script');s.src='<?php echo Pagon\Url::site(); ?>/static/bml.js';d.head.appendChild(s);})(document);" class="tag tag-ok">分享到 iNews</a> ←拖到书签栏
+                    <a href="javascript:(function(d,s){ window.site_url = '<?php echo Pagon\Url::site(); ?>'; s = d.createElement('script');s.src='<?php echo Pagon\Url::site(); ?>/static/bml.js';d.head.appendChild(s);})(document);" class="tag tag-ok">分享到<?php echo config('site.title'); ?></a> ←拖到书签栏
                 </small>
                 <i class="font font-quote"></i>
                 <input type="text" name="kw" placeholder="type to search..." required />
