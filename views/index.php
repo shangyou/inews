@@ -9,7 +9,9 @@
 
     <li class="news-item up">
         <h4>
-            <a href="<?php echo $item->link(); ?>" <?php echo !$item->content ? 'target="_blank"' : '' ?>><?php echo $item->title; ?></a>
+            <a href="<?php echo $item->link(); ?>" <?php echo !$item->content ? 'target="_blank"' : '' ?>>
+              <?php echo !$item->content ? '<sup class="font font-export"></sup>' : '' ?><?php echo $item->title; ?>
+            </a>
             <small class="up-content">
                 <span class="btn-up font font-thumbs-up <?php echo $user && $item->isDiggBy($user->id) ? 'on' : '' ?>"
                       data-id="<?php echo $item->id ?>"

@@ -198,19 +198,20 @@ menu .submit a:hover{text-decoration:none;background:rgba(0,0,0,0.5);}
 .list .stamp{top:15px;}
 
 .news-item{display:block;padding:15px 40px;border-bottom:1px dotted #ddd;position:relative;}
-.news-item:hover, .news-item:active{-moz-transition:background ease-in .1s;-webkit-transition:background ease-in .1s;transition:background ease-in .1s;padding-left:35px;border-left:5px solid #09f;background:#ffe;}
+.news-item:hover, .news-item:active, .news-item.hover, .news-item.active{-moz-transition:background ease-in .1s;-webkit-transition:background ease-in .1s;transition:background ease-in .1s;padding-left:35px;border-left:5px solid #09f;background:#ffe;}
 .news-item:last-child{border-bottom:none;}
 .news-item-cap{background:#fffdd1;}
-.news-item-cap:hover, .news-item-cap:active{padding-left:40px;border:none;border-bottom:1px dotted #ddd;background:#fffdd1;}
+.news-item-cap:hover, .news-item-cap:active, .news-item-cap.hover, .news-item-cap.active{padding-left:40px;border:none;border-bottom:1px dotted #ddd;background:#fffdd1;}
 .news-item .meta{font-family:Optima;}
 .news-item .meta a{color:#999;}
 .news-item h4{margin-bottom:-0.2em;}
 .news-item h4>a:visited{color:#666;}
+.news-item h4 sup{font-size:75%;color:#ddd;margin-left:-18px;display:inline-block;width:18px;}
 
 .up .up-content{display:none;line-height:1.2em;}
 .up-content span {position:relative;top:-2px;color:#08c;cursor:pointer;}
 .up-content span:hover, .up-content span.on{color:#E87C5F;}
-.up:hover .up-content{display:inline;}
+.up:hover .up-content, .up.hover .up-content{display:inline;}
 
 .share{display:none;position:absolute;top:18px;right:20px;font-size:12px;color:#ddd;}
 .share a:hover{text-decoration:none;color:#E87C5F;}
@@ -224,7 +225,7 @@ menu .submit a:hover{text-decoration:none;background:rgba(0,0,0,0.5);}
 tag.verify{text-shadow:none;}
 
 /* article */
-.entry{margin-bottom:20px;}
+.entry{margin:20px 0;}
 .ref a{background:#08c;color:#fff;display:inline-block;padding:0 10px 0 5px;height:20px;border-radius:10px;font-size:12px;max-width:200px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:20px;}
 .ref a:hover{text-decoration:none;-moz-transition:background 0.2s ease-in;-webkit-transition:background 0.2s ease-in;transition:background 0.2s ease-in;background:#E87C5F;}
 
@@ -262,11 +263,11 @@ footer{background:none!important;padding:20px 0 30px;text-shadow: 0 1px 1px #FFF
 .pagination a:hover{text-decoration:none;background:#08c;color:#fff;}
 
 .key {
--moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
--webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-box-shadow:inset 0px 1px 0px 0px #ffffff;
-font-size:12px;
-background-color:#ededed;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;border:1px solid #dcdcdc;display:inline-block;width:60px;color:#777777;text-decoration:none;text-shadow:1px 1px 0px #ffffff;text-align:center;font-style:normal;}
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    font-size:12px;
+    background-color:#ededed;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;border:1px solid #dcdcdc;display:inline-block;width:60px;color:#777777;text-decoration:none;text-shadow:1px 1px 0px #ffffff;text-align:center;font-style:normal;}
 .key:hover {background-color:#dfdfdf;}.key:active {position:relative;top:1px;}
 
 .shortcut .key{margin-right:10px;}
@@ -283,6 +284,9 @@ background-color:#ededed;-moz-border-radius:2px;-webkit-border-radius:2px;border
 .tools.news .news-item:hover{border:none;padding-left:40px;background:none;}
 .tools input{border:none;border-bottom:1px solid #eee;background:none;border-radius:0;}
 .tools input:focus{background:none;border-bottom-color:#aaa;}
+
+.title{background:#F8F8F8;border-bottom: 1px solid #eee;margin:-20px -40px 0;padding: 20px 40px 18px;}
+.typo .title{font-size:18px;}
 
 
 /* iPhone only */
@@ -315,6 +319,7 @@ background-color:#ededed;-moz-border-radius:2px;-webkit-border-radius:2px;border
     textarea{width:280px;}
 
     .tools .pull-right{float:left;margin:0 0 6px!important;display:block;white-space:nowrap;}
+    .title{margin:-10px;padding:10px 20px;}
 }
 
 @media only screen and (device-width: 768px) {

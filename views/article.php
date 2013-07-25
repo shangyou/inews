@@ -1,6 +1,6 @@
-<article class="typo wrapper-padding up">
+<article class="typo wrapper-padding up hover">
 
-    <h2><?php echo $article->title; ?>
+    <h2 class="title"><?php echo $article->title; ?>
         <small class="up-content">
             <span class="btn-up font font-thumbs-up <?php echo $user && $article->isDiggBy($user->id) ? 'on' : '' ?>"
                   data-id="<?php echo $article->id ?>"
