@@ -20,7 +20,13 @@ return array(
         'keywords'     => 'Mac, iOS, iPhone tips, Mac tips, iOS tips, inews.io, inews',
         // footer display on every page
         'footer'       => '',
-        'search_bar'   => '<a href="/p/406">简介</a> | <a href="https://github.com/Trimidea/inews-community/issues" target="_blank">反馈</a> | '
+        // Search bar content
+        'search_bar'   => '<a href="/p/406">简介</a> | <a href="https://github.com/Trimidea/inews-community/issues" target="_blank">反馈</a> | ',
+        // Menus
+        'menus'        => array(
+            array('Latest', '/latest', 'clock'),
+            array('Leaders', '/leaders', 'user'),
+        )
     ),
 
     /**

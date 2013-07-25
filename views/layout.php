@@ -20,9 +20,20 @@
 
 <header id="header">
     <menu class="wrapper clearfix">
-        <li<?php if (!in_array($id, array('latest', 'leader'))): ?> class="on"<?php endif; ?>><a href="/"><i class="font font-monitor"></i> <?php echo $config['site']['title']; ?></a></li>
-        <li<?php if ($id == 'latest'): ?> class="on"<?php endif; ?>><a href="/latest"><i class="font font-clock"></i> Latest</a></li>
-        <li<?php if ($id == 'leader'): ?> class="on"<?php endif; ?>><a class="topuser" href="/leaders"><i class="font font-user"></i> Leaders</a></li>
+        <?php
+        $menus = config('site.menus');
+        $focus = null;
+        foreach ($menus as $menu) {
+            if (app()->input->path() == $menu[1]) {
+                $focus = $menu[1];
+                break;
+            }
+        }
+        ?>
+        <li<?php if (!$focus): ?> class="on"<?php endif; ?>><a href="/"><i class="font font-monitor"></i> <?php echo $config['site']['title']; ?></a></li>
+        <?php foreach ($menus as $menu): ?>
+            <li<?php if ($focus == $menu[1]): ?> class="on"<?php endif; ?>><a href="<?php echo $menu[1]; ?>"><i class="font<?php if (!empty($menu[2])){ echo ' font-' . $menu[2]; } ?>"></i> <?php echo $menu[0]; ?></a></li>
+        <?php endforeach; ?>
         <li class="submit"><a href="/submit"><i class="font font-edit"></i> Share one</a></li>
     </menu>
 </header>
