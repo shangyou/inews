@@ -14,12 +14,12 @@
   ],
   "require": {
     "php": ">=5.3.1",
-    "dflydev/markdown": "dev-master",
+    "dflydev/markdown": "v1.0.2",
     "voodoophp/paginator": "1.1.1",
     "pagon/pagon": "0.6.2",
-    "j4mie/paris": "dev-master",
+    "j4mie/paris": "v1.3.0",
     "davedevelopment/phpmig": "v0.4.0",
-    "phpmailer/phpmailer": "dev-master",
+    "phpmailer/phpmailer": "v5.2.6",
     "sendgrid/sendgrid": "1.0.0",
     "suin/php-rss-writer": "1.2"
   },
