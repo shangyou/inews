@@ -31,8 +31,8 @@
         }
         ?>
         <li<?php if (!$focus): ?> class="on"<?php endif; ?>><a href="/"><i class="font font-monitor"></i> <?php echo $config['site']['title']; ?></a></li>
-        <?php foreach ($menus as $menu): ?>
-            <li<?php if ($focus == $menu[1]): ?> class="on"<?php endif; ?>><a href="<?php echo $menu[1]; ?>"><i class="font<?php if (!empty($menu[2])){ echo ' font-' . $menu[2]; } ?>"></i> <?php echo $menu[0]; ?></a></li>
+        <?php foreach ($menus as $i => $menu): ?>
+            <li<?php if ($focus == $menu[1]): ?> class="on"<?php endif; ?>><a href="<?php echo $menu[1]; ?>"<?php if ($i > 0) { echo ' class="topuser"'; } ?>><i class="font<?php if (!empty($menu[2])){ echo ' font-' . $menu[2]; } ?>"></i> <?php echo $menu[0]; ?></a></li>
         <?php endforeach; ?>
         <li class="submit"><a href="/submit"><i class="font font-edit"></i> Share one</a></li>
     </menu>
