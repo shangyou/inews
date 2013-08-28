@@ -16,7 +16,7 @@
     "php": ">=5.3.9",
     "dflydev/markdown": "v1.0.2",
     "voodoophp/paginator": "1.1.1",
-    "pagon/pagon": "0.7.3",
+    "pagon/pagon": "0.7.4",
     "j4mie/paris": "v1.3.0",
     "davedevelopment/phpmig": "v0.4.0",
     "phpmailer/phpmailer": "v5.2.6",
