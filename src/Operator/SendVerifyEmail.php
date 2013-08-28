@@ -11,10 +11,12 @@ class SendVerifyEmail
     {
         if (!$user->email || $user->isOK()) return false;
 
+        if (!$config = config('mail')) return false;
+
         $link = site_url() . '/account/verify?code=' . urlencode(app()->cryptor->encrypt($user->email));
 
         try {
-            $mailer = new Mailer(config('mail'));
+            $mailer = new Mailer($config);
             $mailer->to($user->email, $user->name)
                 ->subject('[iNews] Please confirm your email address.')
                 ->html('Hi ' . $user->name . ',<br /><br />

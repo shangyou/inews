@@ -90,19 +90,19 @@ return array(
     /**
      * Passport for 3rd
      */
-    'passport'      => array(
+    /*'passport'      => array(
         'weibo' => array(
             'key'            => '2949574903',
             'secret'         => '86aaebd2ac368208efc10eca65961e2e',
             'strategy_class' => 'SinaWeibo'
         )
-    ),
+    ),*/
 
     /**
      * Mail config
      */
-    'mail'          => array(
+    /*'mail'          => array(
         'from'     => 'hfcorriez@gmail.com',
         'fromName' => 'iNews.io'
-    )
+    )*/
 );

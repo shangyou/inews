@@ -64,7 +64,11 @@ endif; ?>
             <?php if ($unread_count = $user->unreadNotifyCount()): ?><span id="notice" class="badge"><?php echo $unread_count; ?></span><?php endif; ?>
             </a>.
     <?php else: ?>
-        Hi there. u can <a href="/account/login">signin</a>, with <a href="/login/weibo">weibo</a> or <a href="/account/register">signup</a> as a member of the community.
+        Hi there. u can <a href="/account/login">signin</a>
+        <?php if ($passport = config('passport')): foreach (config('passport') as $key => $null): ?>
+        , with <a href="/login/<?php echo $key; ?>"><?php echo $key; ?></a>
+        <?php endforeach;endif; ?>
+        or <a href="/account/register">signup</a> as a member of the community.
     <?php endif; ?>
 </div>
 
