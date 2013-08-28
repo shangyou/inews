@@ -3,6 +3,7 @@
 namespace Route\Web\Account;
 
 use Model\User;
+use Operator\SendVerifyEmail;
 use ORM;
 use Pagon\Http\Input;
 use Route\Web;
@@ -70,25 +71,9 @@ class Edit extends Web
 
         if ($send) {
             // Send verify email
-            $this->sendVerifyMail($this->user);
+            SendVerifyEmail::perform($this->user);
         }
 
         $this->redirect('/u/' . $this->user->id);
-    }
-
-    private function sendVerifyMail($user)
-    {
-        $link = 'http://' . $this->input->domain() . '/account/verify?code=' . urlencode($this->app->cryptor->encrypt($user->email));
-
-        $sendgrid = new SendGrid($this->app->sendgrid['username'], $this->app->sendgrid['password']);
-        $mail = new SendGrid\Mail();
-        $mail->addTo($user->email, $user->name)
-            ->setFrom('trimidea@gmail.com')
-            ->setSubject('[iNews] Please confirm your email address.')
-            ->setHtml('Hi ' . $user->name . ',<br /><br />
-Please confirm your email address in order to fully-activate your new iNews account.<br/><br/><a href="' . $link . '">' . $link . '</a>')
-            ->addFilterSetting('subscriptiontrack', 'enable', false);
-
-        $sendgrid->web->send($mail);
     }
 }

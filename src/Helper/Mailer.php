@@ -30,14 +30,13 @@ class Mailer extends PHPMailer
     protected function configureMailer()
     {
         switch ($this->options['type']) {
-            case 'sendmail':
-                $this->IsSendmail();
-                break;
             case 'smtp':
                 $this->IsSMTP();
                 break;
+            case 'sendmail':
             default:
-                throw new \InvalidArgumentException("Unknown mailer type '{$this->options['type']}'");
+                $this->IsSendmail();
+                break;
         }
 
         // Set option of mailer
@@ -70,7 +69,7 @@ class Mailer extends PHPMailer
      * @param string $html
      * @return $this
      */
-    public function body($html)
+    public function html($html)
     {
         $this->MsgHTML($html);
         return $this;
@@ -82,7 +81,7 @@ class Mailer extends PHPMailer
      * @param string $text
      * @return $this
      */
-    public function altBody($text)
+    public function text($text)
     {
         $this->AltBody = $text;
         return $this;
@@ -98,6 +97,19 @@ class Mailer extends PHPMailer
     public function to($address, $name = '')
     {
         $this->AddAddress($address, $name);
+        return $this;
+    }
+
+    /**
+     * Set from
+     *
+     * @param string $address
+     * @param string $name
+     * @return $this
+     */
+    public function from($address, $name = '')
+    {
+        $this->SetFrom($address, $name);
         return $this;
     }
 

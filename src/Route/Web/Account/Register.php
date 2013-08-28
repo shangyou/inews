@@ -2,10 +2,11 @@
 
 namespace Route\Web\Account;
 
+use Helper\Crypt;
+use Model\Model;
+use Operator\SendVerifyEmail;
 use ORM;
 use Route\Web;
-use Model\Model;
-use Helper\Crypt;
 use SendGrid;
 
 class Register extends Web
@@ -54,6 +55,7 @@ class Register extends Web
         }
 
         // Create user
+        /** @var $user \Model\User */
         $user = Model::factory('User')->create(array(
             'name'     => $this->input->data('name'),
             'password' => Crypt::makePassword($this->input->data('password'), $this->app->password_salt),
@@ -86,26 +88,10 @@ class Register extends Web
         // Check if verify user
         if ($is_verify_user) {
             // Send verify email
-            $this->sendVerifyMail($user);
+            SendVerifyEmail::perform($user);
             $this->redirect('/account/welcome');
         } else {
             $this->redirect('/');
         }
-    }
-
-    private function sendVerifyMail($user)
-    {
-        $link = 'http://' . $this->input->domain() . '/account/verify?code=' . urlencode($this->app->cryptor->encrypt($user->email));
-
-        $sendgrid = new SendGrid($this->app->sendgrid['username'], $this->app->sendgrid['password']);
-        $mail = new SendGrid\Mail();
-        $mail->addTo($user->email, $user->name)
-            ->setFrom('trimidea@gmail.com')
-            ->setSubject('[iNews] Please confirm your email address.')
-            ->setHtml('Hi ' . $user->name . ',<br /><br />
-Please confirm your email address in order to fully-activate your new iNews account.<br/><br/><a href="' . $link . '">' . $link . '</a>')
-            ->addFilterSetting('subscriptiontrack', 'enable', false);
-
-        $sendgrid->web->send($mail);
     }
 }

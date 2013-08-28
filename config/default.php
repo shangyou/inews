@@ -81,14 +81,6 @@ return array(
     'verify_user'   => false,
 
     /**
-     * Sendgrid config, If not set, verify-mail can not send.
-     */
-    'sendgrid'      => array(
-        'username' => '',
-        'password' => '',
-    ),
-
-    /**
      * The admins fill with username
      */
     'admins'        => array(
@@ -104,5 +96,13 @@ return array(
             'secret'         => '86aaebd2ac368208efc10eca65961e2e',
             'strategy_class' => 'SinaWeibo'
         )
+    ),
+
+    /**
+     * Mail config
+     */
+    'mail'          => array(
+        'from'     => 'hfcorriez@gmail.com',
+        'fromName' => 'iNews.io'
     )
 );
