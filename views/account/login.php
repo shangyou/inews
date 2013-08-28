@@ -6,6 +6,6 @@
         <input class="btn" type="submit" value="Signin"/> <small>don't have an account? <a href="/account/register" class="highlight">Get one &rarr;</a></small>
     </form>
     <p>
-        Social Login: <a href="/login/sinaweibo" class=""><i class="font font-sina-weibo"></i> Weibo</a>
+        Social Login: <a href="/login/weibo" class=""><i class="font font-sina-weibo"></i> Weibo</a>
     </p>
 </article>
