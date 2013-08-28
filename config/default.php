@@ -99,9 +99,10 @@ return array(
      * Passport for 3rd
      */
     'passport'      => array(
-        'sinaweibo' => array(
-            'key'    => '2949574903',
-            'secret' => '86aaebd2ac368208efc10eca65961e2e'
+        'weibo' => array(
+            'key'            => '2949574903',
+            'secret'         => '86aaebd2ac368208efc10eca65961e2e',
+            'strategy_class' => 'sinaweibo'
         )
     )
 );
