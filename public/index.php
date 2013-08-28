@@ -4,6 +4,11 @@
 $app = include dirname(__DIR__) . '/bootstrap.php';
 
 $app->add('Session\Cookie', array('lifetime' => 86400 * 7));
+$app->add('OPAuth', array(
+    'security_salt' => 'LDFmiilYf8Fyw5W10rxx4W1KsVrieQCnpBzzpTBWA5vJidQKDx8pMJbmw28R1C4m',
+    'Strategy'      => $app->get('passport'),
+    'callback'      => '\Route\Web\Login\Callback'
+));
 
 $app->get('/', '\Route\Web\Index');
 $app->get('/latest', '\Route\Web\Latest');

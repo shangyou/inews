@@ -8,18 +8,18 @@ require __DIR__ . '/vendor/autoload.php';
 
 $app = new App(__DIR__ . '/config/default.php');
 
+$app->add('Booster');
 $app->assisting();
 
-$app->configure(function ($mode) use ($app) {
-    $conf_file = __DIR__ . '/config/' . $mode . '.php';
-    if (is_file($conf_file)) {
-        $app->append(include($conf_file));
-    }
-});
+// Load config by enviroment
+if (is_file($conf_file = __DIR__ . '/config/' . $app->mode() . '.php')) {
+    $app->append(include($conf_file));
+}
 
-$app->configure('develop', function () use ($app) {
+// Add pretty exception
+if ($app->mode() == 'develop') {
     $app->add('PrettyException');
-});
+};
 
 $app->protect('loadOrm', function () {
     global $app;

@@ -9,25 +9,25 @@ $app = include dirname(__DIR__) . '/bootstrap.php';
 
 $app->buffer = false;
 
-$app->cli('db:init', '\Route\Cli\DB\Init');
+$app->cli('db\:init', '\Route\Cli\DB\Init');
 
-$app->cli('db:(:command)', function ($req, $res) {
+$app->cli('db\:(:command)', function ($req, $res) {
     chdir(APP_DIR);
     $args = array_slice($req->argv, 2);
     echo shell_exec(APP_DIR . '/vendor/bin/phpmig ' . ($req->params['command'] != 'mig' ? $req->params['command'] . ' ' : '') . join(' ', $args));
 });
 
-$app->cli('job:point', '\Route\Cli\Job\AnalysisPoint');
+$app->cli('job\:point', '\Route\Cli\Job\AnalysisPoint');
 
-$app->cli('update:article', '\Route\Cli\Job\UpdateArticle');
-$app->cli('update:user', '\Route\Cli\Job\UpdateUser');
+$app->cli('update\:article', '\Route\Cli\Job\UpdateArticle');
+$app->cli('update\:user', '\Route\Cli\Job\UpdateUser');
 
-$app->cli('invite:build', '\Route\Cli\Invite\Build');
-$app->cli('invite:available', '\Route\Cli\Invite\Available');
-$app->cli('invite:send', '\Route\Cli\Invite\Send');
-$app->cli('invite:mail', '\Route\Cli\Invite\Mail');
+$app->cli('invite\:build', '\Route\Cli\Invite\Build');
+$app->cli('invite\:available', '\Route\Cli\Invite\Available');
+$app->cli('invite\:send', '\Route\Cli\Invite\Send');
+$app->cli('invite\:mail', '\Route\Cli\Invite\Mail');
 
-$app->cli('post:(:action)', '\Route\Cli\Article\Manage');
+$app->cli('post\:(:action)', '\Route\Cli\Article\Manage');
 
 // Default help
 $app->handleError('404', function ($req, $res) {

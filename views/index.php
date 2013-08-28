@@ -2,7 +2,7 @@
 
 <ul class="news typo">
   <?php if(isset($kw)) { ?>
-    <li class="news-item news-item-cap"><strong>Search result for: <span class="highlight"><?php echo Pagon\Html::entities($kw); ?></span></strong></li>
+    <li class="news-item news-item-cap"><strong>Search result for: <span class="highlight"><?php echo e($kw); ?></span></strong></li>
   <?php } ?>
 <?php if ($articles): foreach ($articles as $item): ?>
     <?php $author = $item->author()->find_one(); ?>
