@@ -97,8 +97,8 @@ return array(
             'strategy_class' => 'SinaWeibo'
         ),
         'github' => array(
-            'client_id'      => 'c9082b4e10eddfe94c60',
-            'client_secret'  => 'd432c51daf48e131212b630f668764ff6dd8384f',
+            'client_id'      => '48e6e90a1f919cbaeef5',
+            'client_secret'  => 'a10c12531e6087ca056c3a9e50cb71c574f7c870',
             'strategy_class' => 'Github'
         )
     ),*/
