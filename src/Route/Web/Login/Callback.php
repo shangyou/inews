@@ -30,7 +30,17 @@ class Callback extends Web
                     // 没有用户创建一个
                     $user = Model::factory('User')->create();
                     $user->name = $auth['info']['name'];
-                    $user->bio = $auth['raw']['description'];
+
+                    if (isset($auth['info']['description']) && ($bio = $auth['info']['description'])
+                        || isset($auth['raw']['description']) && ($bio = $auth['raw']['description'])
+                    ) {
+                        $user->bio = $bio;
+                    }
+
+                    if (isset($auth['info']['email']) && ($email = $auth['info']['email'])) {
+                        $user->email = $email;
+                    }
+
                     $user->status = User::OK;
                     $user->save();
                     $user_id = $user->id;
@@ -40,9 +50,9 @@ class Callback extends Web
                 $passport = Model::factory('Passport')->create();
                 $passport->provider = $auth['provider'];
                 $passport->uid = $auth['uid'];
-                $passport->display_name = $auth['info']['name'];
+                $passport->display_name = $auth['info']['nickname'];
                 $passport->access_token = $auth['credentials']['token'];
-                $passport->expired_at = $auth['credentials']['expires'];
+                $passport->expired_at = !empty($auth['credentials']['expires']) ? $auth['credentials']['expires'] : null;
                 $passport->user_id = $user_id;
                 $passport->save();
 

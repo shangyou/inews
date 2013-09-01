@@ -91,10 +91,15 @@ return array(
      * Passport for 3rd
      */
     /*'passport'      => array(
-        'weibo' => array(
-            'key'            => '2949574903',
-            'secret'         => '86aaebd2ac368208efc10eca65961e2e',
+        'weibo'  => array(
+            'key'            => '4001143741',
+            'secret'         => 'ae6c0c7599e22f2fe0eb7726666cee32',
             'strategy_class' => 'SinaWeibo'
+        ),
+        'github' => array(
+            'client_id'      => 'c9082b4e10eddfe94c60',
+            'client_secret'  => 'd432c51daf48e131212b630f668764ff6dd8384f',
+            'strategy_class' => 'Github'
         )
     ),*/
 

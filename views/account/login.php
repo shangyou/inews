@@ -15,6 +15,9 @@
             <?php if (isset($passport['weibo'])): ?>
                 <a href="/login/weibo" class=""><i class="font font-sina-weibo"></i> Weibo</a>
             <?php endif; ?>
+            <?php if (isset($passport['github'])): ?>
+                <a href="/login/github" class=""><i class="font font-github"></i> Github</a>
+            <?php endif; ?>
         </p>
     <?php endif; ?>
 </article>
