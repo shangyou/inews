@@ -99,7 +99,7 @@ return array(
         'github' => array(
             'client_id'      => '48e6e90a1f919cbaeef5',
             'client_secret'  => 'a10c12531e6087ca056c3a9e50cb71c574f7c870',
-            'strategy_class' => 'Github'
+            'strategy_class' => 'GitHub'
         )
     ),*/
 
