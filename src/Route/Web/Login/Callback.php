@@ -22,7 +22,7 @@ class Callback extends Web
                 ->where('uid', $auth['uid'])->find_one()
             ) {
                 $passport->access_token = $auth['credentials']['token'];
-                $passport->expired_at = $auth['credentials']['expires'];
+                $passport->expired_at = !empty($auth['credentials']['expires']) ? $auth['credentials']['expires'] : null;
                 $passport->save();
             } else {
                 // 检查当前是否有登陆用户
