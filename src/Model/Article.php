@@ -30,6 +30,11 @@ class Article extends Model
         return $this->has_many('Comment');
     }
 
+    public function diggs()
+    {
+        return $this->has_many('UserDigg');
+    }
+
     public function link()
     {
         if ($this->content) {
