@@ -8,12 +8,20 @@ use Route\Cli as Route;
 
 class AnalysisPoint extends Route
 {
+    protected $arguments = array(
+        '-a|--all' => array('help' => 'Process all articles'),
+    );
+
     public function run()
     {
+        $model = Model::factory('Article');
+
+        if (!$this->params['all']) {
+            $model->where_gte('created_at', date('Y-m-d', strtotime('-1 month')));
+        }
+
         /** @var $articles \Model\Article[] */
-        $articles = Model::factory('Article')
-            ->where_gte('created_at', date('Y-m-d', strtotime('-1 month')))
-            ->find_many();
+        $articles = $model->find_many();
 
         foreach ($articles as $article) {
             $article->digg_count = $article->diggs()->count();

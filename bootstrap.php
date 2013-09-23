@@ -19,7 +19,9 @@ if (is_file($conf_file = __DIR__ . '/config/' . $app->mode() . '.php')) {
 // Add pretty exception
 if ($app->mode() == 'develop') {
     $app->add('PrettyException');
-};
+} else {
+    error_reporting(E_ALL & ~E_NOTICE);
+}
 
 $app->protect('loadOrm', function () {
     global $app;
