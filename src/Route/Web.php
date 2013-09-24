@@ -68,7 +68,7 @@ class Web extends Rest
         if (!$this->user) {
             $this->redirect(
                 '/account/login?continue=' .
-                ($this->input->isGet() ? $this->input->uri() : $this->input->refer())
+                ($this->input->is('get') ? $this->input->uri() : $this->input->refer())
             );
         }
     }
