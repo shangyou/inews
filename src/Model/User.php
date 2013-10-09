@@ -4,6 +4,18 @@ namespace Model;
 
 use Pagon\App;
 
+/**
+ * 用户模型
+ *
+ * @package Model
+ * @param string $name                 名称
+ * @param string $password             加密密码
+ * @param string $email                邮箱
+ * @param string $bio                  账号BIO
+ * @param string $posts_count          发送数量
+ * @param string $digged_count         顶帖数量
+ * @param int    $status               状态
+ */
 class User extends Model
 {
     public static $_table = 'user';

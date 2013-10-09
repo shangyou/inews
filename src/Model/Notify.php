@@ -4,6 +4,17 @@ namespace Model;
 
 use Model\Model;
 
+/**
+ * 通知模型
+ *
+ * @package Model
+ * @param string $type              类型
+ * @param string $status            状态
+ * @param string $user_id           来源ID
+ * @param string $from_user_id      目标ID
+ * @param string $object_type       所属对象类型
+ * @param string $object_id         所属对象ID
+ */
 class Notify extends Model
 {
     public static $_table = 'notify';

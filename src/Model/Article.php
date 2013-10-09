@@ -5,7 +5,7 @@ namespace Model;
 use Pagon\Url;
 
 /**
- * Article Model
+ * 文章模型
  *
  * @package Model
  * @param string $title     标题
