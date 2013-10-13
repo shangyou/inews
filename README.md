@@ -1,15 +1,31 @@
-# iNews
+# 关于
 
-iNews是一套开源的极简社区程序
+```
+    _ _   __                 
+   (_) | / /__ _      _______
+  / /  |/ / _ \ | /| / / ___/
+ / / /|  /  __/ |/ |/ (__  ) 
+/_/_/ |_/\___/|__/|__/____/  
+                             
+```                         
+
+> iNews是一套开源的极简社区程序
 
 # 目标
 
-通过使用我们的程序并反馈意见，逐步调整和强化，来做出最适合集中兴趣，并可以展现内容价值的极简社区。
+通过使用我们的程序并反馈意见，逐步调整和强化，来做出最适合展现内容价值的简约社区为网络带来更多的价值。
 
 # 文档
 
-- [安装](./docs/Install.md)
+- [安装](./docs/01-Install.md)
+- [配置](./docs/02-Setup.md)
 
 # 反馈
 
-[反馈邮箱](mailto:trimidea@gmail.com)
+- [反馈邮箱](mailto:trimidea@gmail.com)
+
+# 使用中
+
+- [Wow!Ubuntu](http://news.wowubuntu.com)
+- [前端观察](http://qianduan.us)
+- [GitTags](http://gittags.com)

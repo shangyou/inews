@@ -5,7 +5,7 @@
   - php-pdo
   - php-pdo-mysql
   - php-mbstring
-- Composer (`brew install composer` or [composer](http://getcomposer.org))
+- Composer (MAC下`brew install composer`或去官网[composer](http://getcomposer.org))
 - Apache/Nginx
 - Mysql 5.1+
 
@@ -35,7 +35,7 @@ cp config/default.php config/production.php
 vim config/production.php
 ```
 
-> 具体说明可以参照 [配置说明](./Setup.md)
+> 具体说明可以参照 [配置说明](./02-Setup.md)
 
 ## 初始化
 
