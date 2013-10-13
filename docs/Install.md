@@ -1,5 +1,4 @@
-环境要求
------
+# 环境要求
 
 - PHP 5.3.9+
   - php-mcrypt
@@ -10,12 +9,11 @@
 - Apache/Nginx
 - Mysql 5.1+
 
-安装
------
+# 安装
 
 > 如果是cPannel等虚拟主机，需要在相应界面进行修改，不需要操作命令行
 
-1 获取源代码
+## 获取源代码
 
 ```
 git clone git@github.com:trimidea/inews.git
@@ -23,13 +21,13 @@ cd 程序根目录
 composer install
 ```
 
-2 配置环境
+## 配置环境
 
 ```
 export PAGON_ENV=production
 ```
 
-3 修改配置
+## 修改配置
 
 ```
 cd 程序根目录
@@ -37,9 +35,9 @@ cp config/default.php config/production.php
 vim config/production.php
 ```
 
-> 配置说明可以先看default.php的注释
+> 具体说明可以参照 [配置说明](./Setup.md)
 
-4 初始化
+## 初始化
 
 ```
 ./bin/task db:init
@@ -48,7 +46,7 @@ vim config/production.php
 
 > 用来初始化和升级数据库表
 
-5 定时任务
+## 定时任务
 
 ```
 */10 * * * * 程序根目录/bin/task job:point
@@ -56,9 +54,9 @@ vim config/production.php
 
 > 用来计算积分和排名
 
-6 配置主机
+## 配置主机
 
-如果是Apache：
+### 如果是Apache
 
 ```
 <VirtualHost *:80>
@@ -75,7 +73,7 @@ vim config/production.php
 </VirtualHost>
 ```
 
-如果是Nginx+FPM：
+### 如果是Nginx+FPM
 
 ```
 server {

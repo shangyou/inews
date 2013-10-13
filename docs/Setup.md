@@ -1,8 +1,18 @@
-<?php
-/**
- * 声明：该文件为默认配置，不要修改这个文件，要修改配置请新建文件来覆盖配置名称
- */
+# 配置环境
 
+默认的配置目录为`./config`，默认配置为`default.php`，环境配置根据环境变量`PAGON_ENV`来调用
+
+例如
+
+```
+export PAGON_ENV=production
+```
+
+此时，程序会加载`./config/production.php`合并`./config/default.php`作为配置
+
+# 配置说明
+
+```php
 return array(
     /**
      * 网站配置
@@ -102,10 +112,11 @@ return array(
     ),*/
 
     /**
-     * 邮件配置，需要服务器配置好/usr/sbin/sendmail
+     * 邮件配置，需要服务器配置好sendmail
      */
     /*'mail'          => array(
         'from'     => 'hfcorriez@gmail.com',
         'fromName' => 'iNews.io'
     )*/
 );
+```

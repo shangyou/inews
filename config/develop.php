@@ -1,7 +1,14 @@
 <?php
 
 return array(
+    /**
+     * 开始Debug模式
+     */
     'debug'    => true,
+
+    /**
+     * 数据库配置
+     */
     'database' => array(
         'type'     => 'mysql',
         'host'     => 'localhost',
