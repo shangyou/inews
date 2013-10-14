@@ -1,6 +1,4 @@
-# 关于
-
-```
+```ruby
     _ _   __                 
    (_) | / /__ _      _______
   / /  |/ / _ \ | /| / / ___/
@@ -9,23 +7,27 @@
                              
 ```                         
 
-> iNews是一套开源的极简社区程序
+-----------------------
 
-# 目标
 
-通过使用我们的程序并反馈意见，逐步调整和强化，来做出能为网络内容带来更多价值的简约社区。
+#### 一、目标与使用方法
 
-# 文档
+iNews是一套开源的极简社区程序，我们的目标是让开发者轻松获得一个与 Hacker News 一般，并且更漂亮、又能跨终端（Responsive 适配）运行的分享网站。
 
-- [安装](./docs/01-Install.md)
-- [配置](./docs/02-Setup.md)
+#### 二、快速上手：
 
-# 反馈
+- [安装](./docs/01-Install.md)：在自己的服务器上运行 iNews 程序
+- [配置](./docs/02-Setup.md)：网站信息、管理员（审批权限）、邮件发送与邮件服务器设置等
 
-- [反馈邮箱](mailto:trimidea@gmail.com)
 
-# 使用中
+#### 三、反馈
 
-- [Wow!Ubuntu](http://news.wowubuntu.com)
-- [前端观察](http://qianduan.us)
-- [GitTags](http://gittags.com)
+- 提 issue 或者 pull-request
+- [邮箱反馈：trimidea@gmail.com](mailto:trimidea@gmail.com?subject=对 iNews 程序有建议)
+
+#### 四、运行在 iNews 程序中的网站
+
+- iNews.io - 主程序实时预览 http://inews.io
+- Linews - Linux / Opensource news http://news.wowubuntu.com/
+- 前端界 - http://qianduan.us/
+- GitTags - http://gittags.com
